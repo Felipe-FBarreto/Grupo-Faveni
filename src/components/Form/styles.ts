@@ -9,7 +9,7 @@ export const Container = styled.div`
   border: 10px solid #468C4F;
   padding: 20px 10px;
   position: relative;
-  top: -30px;
+  top: -40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,7 +76,7 @@ export const Register = styled.button`
   font-size: 1.5rem;
   color: #266D2F;
   font-weight: bold;
-  margin-top: 60px;
+  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,7 +86,6 @@ export const Register = styled.button`
     cursor: pointer;
   }
 `
-
 export const StyledReCAPTCHA = styled(ReCAPTCHA)`
-  margin-top: 40px;
+  margin-left: 8%;
 `
