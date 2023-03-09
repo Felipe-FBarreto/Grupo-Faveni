@@ -19,5 +19,7 @@ export const Logo = styled.div`
  @media(max-width:760px){
   display: flex;
   justify-content: center;
+  margin-left: 0;
  }
+
 `
