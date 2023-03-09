@@ -2,7 +2,6 @@ import React, { ChangeEvent, FormEvent, useState } from 'react'
 import * as C from './styles'
 import emailjs from '@emailjs/browser'
 import {ColorRing} from 'react-loader-spinner'
-import ReCAPTCHA from 'react-google-recaptcha'
 
 
 function Form() {
@@ -90,7 +89,7 @@ const handleChangeReCAPTCHA = (value:string | null) => {
           <C.Options value="formacaopedagogia">Formação pedagógica R2</C.Options>
         </C.Select>
 
-        <ReCAPTCHA sitekey='6LdqlukkAAAAAEnx_lV0PZVMpKnz2SuDvuOTLz9V' security='6LdqlukkAAAAAKcISauX_NmjgqI9a2P2lj-U5BBs' onChange={handleChangeReCAPTCHA}/>
+        <C.StyledReCAPTCHA sitekey='6LdqlukkAAAAAEnx_lV0PZVMpKnz2SuDvuOTLz9V' security='6LdqlukkAAAAAKcISauX_NmjgqI9a2P2lj-U5BBs' onChange={handleChangeReCAPTCHA}></C.StyledReCAPTCHA>
 
         <C.Register>{loading ? <ColorRing colors={['#266D2F','#266D2F','#266D2F','#266D2F','#266D2F']} height='40' width='40'  /> : 'Cadastre-se Já'}</C.Register>
       </C.Form>

@@ -1,5 +1,6 @@
 import  styled  from 'styled-components';
 import MaskedInput from 'react-input-mask'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 export const Container = styled.div`
   width: 400px;
@@ -9,6 +10,10 @@ export const Container = styled.div`
   padding: 20px 10px;
   position: relative;
   top: -30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 export const TitleForm = styled.h2`
   font-size: 1.3rem;
@@ -80,4 +85,8 @@ export const Register = styled.button`
     color: #b4923e;
     cursor: pointer;
   }
+`
+
+export const StyledReCAPTCHA = styled(ReCAPTCHA)`
+  margin-top: 40px;
 `
