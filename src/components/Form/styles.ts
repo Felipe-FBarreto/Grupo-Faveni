@@ -14,6 +14,25 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media(max-width:1070px){
+    max-width: 350px;
+ }
+ @media(max-width:760px){
+  top: 0;
+  margin:20px 0;
+  max-width: 400px;
+}
+@media(max-width:520px){
+  max-width: 350px;
+}
+@media(max-width:360px){
+  max-width: 320px;
+  border: 0;
+  padding:10px;
+
+}
+
 `
 export const TitleForm = styled.h2`
   font-size: 1.3rem;
@@ -88,4 +107,16 @@ export const Register = styled.button`
 `
 export const StyledReCAPTCHA = styled(ReCAPTCHA)`
   margin-left: 8%;
+
+
+  @media(max-width:1070px){
+   margin-left: 0;
+ }
+ @media(max-width:760px){
+  margin-left: 8%;
+}
+@media(max-width:520px){
+  margin-left: 0;
+  
+}
 `
