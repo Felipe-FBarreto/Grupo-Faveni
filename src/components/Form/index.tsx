@@ -2,19 +2,32 @@ import React, { ChangeEvent, FormEvent, useState } from 'react'
 import * as C from './styles'
 import emailjs from '@emailjs/browser'
 import {ColorRing} from 'react-loader-spinner'
-function Form() {
+import ReCAPTCHA from 'react-google-recaptcha'
 
+
+function Form() {
 const [name,setName] = useState<string>('')
 const [email,setEmail] = useState<string>('')
 const [phone,setPhone] = useState<string>('')
 const [confirmPhone,setConfirmForm] = useState<string>('')
 const [modality,setModality] = useState<string>('')
 const [loading,setLoading] = useState<boolean>(false)
+const [isRecaptchaVerified, setIsRecaptchaVerified] = useState(false);
 
-
+const handleChangeReCAPTCHA = (value:string | null) => {
+  if(value){
+    setIsRecaptchaVerified(true)
+  }
+}
 
   const handleSubmit = (e:FormEvent<HTMLFormElement>) => {
    e.preventDefault()
+
+    if(!isRecaptchaVerified){
+      alert("Por favor, resolva o reCAPTCHA antes de enviar o formulario")
+      return
+    }
+
   const templateParams = {
     name,
     email,
@@ -76,6 +89,9 @@ const [loading,setLoading] = useState<boolean>(false)
           <C.Options value="licenciatura">2° Licenciatura</C.Options>
           <C.Options value="formacaopedagogia">Formação pedagógica R2</C.Options>
         </C.Select>
+
+        <ReCAPTCHA sitekey='6LdqlukkAAAAAEnx_lV0PZVMpKnz2SuDvuOTLz9V' security='6LdqlukkAAAAAKcISauX_NmjgqI9a2P2lj-U5BBs' onChange={handleChangeReCAPTCHA}/>
+
         <C.Register>{loading ? <ColorRing colors={['#266D2F','#266D2F','#266D2F','#266D2F','#266D2F']} height='40' width='40'  /> : 'Cadastre-se Já'}</C.Register>
       </C.Form>
     </C.Container>
