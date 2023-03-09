@@ -72,6 +72,9 @@ export const Register = styled.button`
   color: #266D2F;
   font-weight: bold;
   margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover{
     color: #b4923e;
