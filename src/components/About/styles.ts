@@ -35,7 +35,9 @@ export const TitleAbout = styled.h1`
 
 export const Paragraph = styled.p`
   font-size:1.3rem;
-  margin-top: 30px;
+  max-width: 1280px;
+  margin: 30px auto 0;
+  line-height: 1.3;
 
   @media (max-width: 430px) {
     font-size: 1.125rem;
