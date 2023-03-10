@@ -91,7 +91,7 @@ const handleChangeReCAPTCHA = (value:string | null) => {
 
         <C.StyledReCAPTCHA sitekey='6LdqlukkAAAAAEnx_lV0PZVMpKnz2SuDvuOTLz9V' security='6LdqlukkAAAAAKcISauX_NmjgqI9a2P2lj-U5BBs' onChange={handleChangeReCAPTCHA}></C.StyledReCAPTCHA>
 
-        <C.Register>{loading ? <ColorRing colors={['#266D2F','#266D2F','#266D2F','#266D2F','#266D2F']} height='40' width='40'  /> : 'Cadastre-se Já'}</C.Register>
+        <C.Register>{loading ? <ColorRing colors={['#266D2F','#266D2F','#266D2F','#266D2F','#266D2F']} height='40' width='40'  /> : 'Quero saber mais'}</C.Register>
       </C.Form>
     </C.Container>
   )
