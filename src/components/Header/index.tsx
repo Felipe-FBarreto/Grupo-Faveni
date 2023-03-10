@@ -1,6 +1,6 @@
 import React from 'react'
 import * as C from './styles'
-import logo from  '../assets/img/logo.svg'
+import logo from  '../../assets/img/logo.svg'
 
 
 function Header() {

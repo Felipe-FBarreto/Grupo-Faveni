@@ -1,16 +1,31 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-/* text-align: center; */
-padding: 80px;
 
+export const BG_Container = styled.div`
+  max-width: 1280px;
+  margin:0 auto;
 `
 
-export const TitleAbout = styled.h1`
-  font-size: 3rem;
+export const BG = styled.img`
+  width: 100%;
+  height: 100%;
+`
+
+export const Container = styled.div`
+  padding-bottom: 80px;
+
+  @media (max-width: 1280px) {
+    padding: 20px;
+  }
+
+`;
+
+export const TitleAbout = styled.h2`
+  font-size: 2.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 80px 0;
 
 
   &::before{
@@ -26,10 +41,10 @@ export const TitleAbout = styled.h1`
     font-size: 2.5rem;
   }
   @media (max-width: 485px) {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   @media (max-width: 430px) {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 `
 

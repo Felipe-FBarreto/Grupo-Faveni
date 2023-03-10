@@ -53,7 +53,7 @@ const handleChangeReCAPTCHA = (value:string | null) => {
   return (
     <C.Container>
       <C.TitleForm>
-        Preencha o formulário abaixo e venha garantir sua vaga
+        Preencha o formulário abaixo e venha garantir sua vaga:
         </C.TitleForm>
       <C.Form onSubmit={handleSubmit}>
         <C.Label>Nome:</C.Label>
