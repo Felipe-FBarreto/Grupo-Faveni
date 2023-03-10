@@ -34,11 +34,21 @@ export const Container = styled.div`
 }
 
 `
+
+export const TitleContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`
 export const TitleForm = styled.h2`
   font-size: 1.3rem;
   color: #fff;
   font-weight: bold;
   margin-bottom: 1.5rem;
+  max-width: 90%;
+
+  @media(max-width:520px){
+    font-size: 1.2rem;
+}
 `
 export const Form = styled.form`
 
