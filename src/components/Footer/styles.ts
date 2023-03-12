@@ -14,7 +14,6 @@ export const Container = styled.div`
  }
 
 `
-
 export const Logo = styled.div`
 
  @media(max-width:1280px){
@@ -27,3 +26,5 @@ export const Logo = styled.div`
  }
 
 `
+
+

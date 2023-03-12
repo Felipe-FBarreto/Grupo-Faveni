@@ -1,19 +1,21 @@
 import  styled  from 'styled-components';
 import MaskedInput from 'react-input-mask'
 import ReCAPTCHA from 'react-google-recaptcha'
+import {Modal} from 'react-bootstrap'
 
 export const Container = styled.div`
-  width: 400px;
-  background-color: #266D2F;
+  width: 500px;
+  background-color: var(--color3);
   border-radius: 5px;
-  border: 10px solid #468C4F;
+  border: 10px solid var(--color4);
   padding: 20px 10px;
-  position: relative;
-  top: -40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  position: relative;
+  top: -10px;
 
   @media(max-width:1070px){
     max-width: 350px;
@@ -129,4 +131,22 @@ export const StyledReCAPTCHA = styled(ReCAPTCHA)`
   margin-left: 0;
   
 }
+`
+
+export const ModalStyles = styled(Modal)`
+  background-color: rgba(38,109,47,0.9);
+  height: 50%;
+  width: 50%;
+  border-radius: 20px;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%,-50%);
+`
+
+export const ModalParagraph = styled.h4`
+  font-size: 2.5rem;
+  color: #fff;
+  text-align: center;
 `

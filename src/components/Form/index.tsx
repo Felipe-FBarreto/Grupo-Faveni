@@ -2,7 +2,7 @@ import React, { ChangeEvent, FormEvent, useState } from 'react'
 import * as C from './styles'
 import emailjs from '@emailjs/browser'
 import {ColorRing} from 'react-loader-spinner'
-
+import {Button,Modal} from 'react-bootstrap'
 
 function Form() {
 const [name,setName] = useState<string>('')
@@ -12,6 +12,9 @@ const [confirmPhone,setConfirmForm] = useState<string>('')
 const [modality,setModality] = useState<string>('')
 const [loading,setLoading] = useState<boolean>(false)
 const [isRecaptchaVerified, setIsRecaptchaVerified] = useState(false);
+const [showModal, setShowModal] = useState<boolean>(false);
+
+
 
 const handleChangeReCAPTCHA = (value:string | null) => {
   if(value){
@@ -22,10 +25,10 @@ const handleChangeReCAPTCHA = (value:string | null) => {
   const handleSubmit = (e:FormEvent<HTMLFormElement>) => {
    e.preventDefault()
 
-    if(!isRecaptchaVerified){
-      alert("Por favor, resolva o reCAPTCHA antes de enviar o formulario")
-      return
-    }
+    // if(!isRecaptchaVerified){
+    //   alert("Por favor, resolva o reCAPTCHA antes de enviar o formulario")
+    //   return
+    // }
 
   const templateParams = {
     name,
@@ -35,21 +38,21 @@ const handleChangeReCAPTCHA = (value:string | null) => {
     modality
   }
 
-  setLoading(true)
-  emailjs.send("service_o5dr4xb", "template_we8knos", templateParams,"VD3d76SjVCfyNLYeO").then((response)=>{
-    console.log("Email Enviado",response.status,response.text)
-    setLoading(false)
-    setName('')
-    setEmail(''),
-    setPhone(''),
-    setConfirmForm(''),
-    setModality('')
-  },(err)=>{
-    console.error("Error:", err);
-    
-  })
+  // setLoading(true)
+  // emailjs.send("service_o5dr4xb", "template_we8knos", templateParams,"VD3d76SjVCfyNLYeO").then((response)=>{
+  //   console.log("Email Enviado",response.status,response.text)
+  //   setLoading(false)
+  //   setName('')
+  //   setEmail(''),
+  //   setPhone(''),
+  //   setConfirmForm(''),
+  //   setModality('')
+  // },(err)=>{
+  //   console.error("Error:", err);
+  // })
+  setShowModal(true)
 }
-
+  const handleClose = () => setShowModal(false);
   return (
     <C.Container>
       <C.TitleContainer>
@@ -94,6 +97,9 @@ const handleChangeReCAPTCHA = (value:string | null) => {
 
         <C.Register>{loading ? <ColorRing colors={['#266D2F','#266D2F','#266D2F','#266D2F','#266D2F']} height='40' width='40'  /> : 'Quero saber mais'}</C.Register>
       </C.Form>
+      <C.ModalStyles show={showModal} onHide={handleClose} className="custom-modal">
+        <C.ModalParagraph>Olá {name}, recebemos sua inscrição em breve entraremos em contato, Obrigado! </C.ModalParagraph>
+      </C.ModalStyles>
     </C.Container>
   )
 }

@@ -25,7 +25,7 @@ export const TitleAbout = styled.h2`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 80px 0;
+  margin: 2rem 0 4rem;
 
 
   &::before{

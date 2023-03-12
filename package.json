@@ -1,7 +1,7 @@
 {
   "name": "faveni",
   "private": true,
-  "version": "0.0.14",
+  "version": "0.0.15",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,6 +11,7 @@
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
     "react-google-recaptcha": "^2.1.0",
     "react-input-mask": "^2.0.4",
@@ -19,8 +20,8 @@
   },
   "devDependencies": {
     "@types/css-modules": "^1.0.2",
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
     "@types/react-google-recaptcha": "^2.1.5",
     "@types/react-input-mask": "^3.0.2",
     "@types/styled-components": "^5.1.26",
