@@ -49,9 +49,9 @@ export const ItemLista = styled.li`
   color: #fff;
   font-size: 1.2rem;
   list-style: none;
+  max-width: 90%;
   @media (max-width: 380px) {
     font-size: 1.1rem;
-    max-width: 90%;
   }
   @media (max-width: 360px) {
     font-size: 1rem;
