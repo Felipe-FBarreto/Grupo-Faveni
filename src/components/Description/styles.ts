@@ -51,6 +51,7 @@ export const ItemLista = styled.li`
   list-style: none;
   @media (max-width: 380px) {
     font-size: 1.1rem;
+    max-width: 90%;
   }
   @media (max-width: 360px) {
     font-size: 1rem;
