@@ -12,10 +12,6 @@ function Info() {
         <C.ItemLista>Suporte durante todo o curso</C.ItemLista>
         <C.ItemLista>Plataforma disponível 24 horas</C.ItemLista>
         <C.ItemLista>Estudo 100% EAD com plataforma exclusiva</C.ItemLista>  
-        <C.ItemLista>
-          Tutores mestres e doutores na área que lecionam, disponíveis de segunda a sexta para tirar dúvidas
-        </C.ItemLista>
-        <C.ItemLista>Reconhecidos e credenciados pelo MEC com nota máxima (5)</C.ItemLista>
       </C.Lista>
     </C.Container>
   )

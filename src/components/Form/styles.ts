@@ -20,7 +20,7 @@ export const Container = styled.div`
   @media(max-width:1070px){
     max-width: 350px;
  }
- @media(max-width:760px){
+ @media(max-width:768px){
   top: 0;
   margin:20px 0;
   max-width: 400px;
@@ -124,7 +124,7 @@ export const StyledReCAPTCHA = styled(ReCAPTCHA)`
   @media(max-width:1070px){
    margin-left: 0;
  }
- @media(max-width:760px){
+ @media(max-width:768px){
   margin-left: 8%;
 }
 @media(max-width:520px){
@@ -134,19 +134,63 @@ export const StyledReCAPTCHA = styled(ReCAPTCHA)`
 `
 
 export const ModalStyles = styled(Modal)`
-  background-color: rgba(38,109,47,0.9);
+  background-color: rgba(38,109,47);
   height: 50%;
   width: 50%;
   border-radius: 20px;
-  padding: 20px;
+  padding: 0 2rem;
   position: absolute;
   top: 50%;
   left: 50%; 
   transform: translate(-50%,-50%);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+    @media(max-width:768px){
+      transform: translate(-50%,150%);
+      height: 60%;
+      width: 60%;
+  }
+  
+    @media(max-width:320px){
+      padding: 1rem 2rem; 
+    }
+  
 `
 
 export const ModalParagraph = styled.h4`
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #fff;
   text-align: center;
+
+  @media(max-width:768px){
+      font-size: 1.5rem;
+  }
+  @media(max-width:320px){
+      font-size: 1.2rem;
+  }
+`
+
+export const CloseModal = styled.button`
+  padding: 0.5rem 4rem;
+  border: 0;
+  border-radius: 10px;
+  margin: 40px auto 0 auto;
+  display: block;
+  font-size: 2rem;
+  color: var(--color3);
+  font-weight: bold;
+
+  @media(max-width:768px){
+      font-size: 1.5rem;
+      margin: 20px auto 0 auto;
+
+  }
+  @media(max-width:320px){
+      font-size: 1.2rem;
+      padding: 0.5rem 2rem;
+
+
+  }
 `

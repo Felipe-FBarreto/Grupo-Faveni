@@ -14,7 +14,7 @@ export const Container = styled.div`
     padding: 1rem;
  }
 
-  @media(max-width:760px){
+  @media(max-width:768px){
   margin-top: 1rem;
  }
  @media(max-width:680px){

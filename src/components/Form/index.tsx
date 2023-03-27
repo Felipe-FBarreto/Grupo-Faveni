@@ -1,10 +1,15 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react'
+import React, { ChangeEvent, FormEvent, useState,useRef, RefObject } from 'react'
 import * as C from './styles'
 import emailjs from '@emailjs/browser'
 import {ColorRing} from 'react-loader-spinner'
-import {Button,Modal} from 'react-bootstrap'
 
-function Form() {
+
+interface PropsRef extends React.HTMLProps<HTMLDivElement> {
+  refForm:RefObject<HTMLFormElement>
+  rest?:any
+}
+
+function Form({refForm,rest}:PropsRef) {
 const [name,setName] = useState<string>('')
 const [email,setEmail] = useState<string>('')
 const [phone,setPhone] = useState<string>('')
@@ -51,10 +56,12 @@ const handleChangeReCAPTCHA = (value:string | null) => {
   //   console.error("Error:", err);
   // })
   setShowModal(true)
+  // alert(`Olá ${name}, recebemos sua inscrição em breve entraremos em contato, Obrigado!`)
 }
   const handleClose = () => setShowModal(false);
+
   return (
-    <C.Container>
+    <C.Container ref={refForm} {...rest}>
       <C.TitleContainer>
           <C.TitleForm>
             Preencha o formulário abaixo e venha garantir sua vaga:
@@ -97,8 +104,11 @@ const handleChangeReCAPTCHA = (value:string | null) => {
 
         <C.Register>{loading ? <ColorRing colors={['#266D2F','#266D2F','#266D2F','#266D2F','#266D2F']} height='40' width='40'  /> : 'Quero saber mais'}</C.Register>
       </C.Form>
-      <C.ModalStyles show={showModal} onHide={handleClose} className="custom-modal">
-        <C.ModalParagraph>Olá {name}, recebemos sua inscrição em breve entraremos em contato, Obrigado! </C.ModalParagraph>
+      <C.ModalStyles show={showModal} className="custom-modal">
+        <C.ModalParagraph>
+          Olá {name}, recebemos sua inscrição em breve entraremos em contato, Obrigado! 
+        </C.ModalParagraph>
+        <C.CloseModal onClick={handleClose}>Ok</C.CloseModal>
       </C.ModalStyles>
     </C.Container>
   )

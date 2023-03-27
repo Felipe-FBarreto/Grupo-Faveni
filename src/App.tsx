@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useRef } from 'react'
 import Form from './components/Form'
 import Header from './components/Header'
 import Info from './components/Info'
@@ -10,18 +10,19 @@ import Description from './components/Description'
 
 function App() {
 
+const formRef = useRef(null)
   return (
     <div className='container'>
       <Header/>
       <section className='sectionHome'>
         <div className="sectionContainer">        
             <Description/>
-            <Form/>
+            <Form refForm={formRef}/>
         </div>
       </section>
       <Info/>
       <About/>
-      <Footer/>
+      <Footer formRef={formRef}/>
     </div>
   )
 }
