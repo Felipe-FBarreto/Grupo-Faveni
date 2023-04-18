@@ -30,10 +30,10 @@ const handleChangeReCAPTCHA = (value:string | null) => {
   const handleSubmit = (e:FormEvent<HTMLFormElement>) => {
    e.preventDefault()
 
-    // if(!isRecaptchaVerified){
-    //   alert("Por favor, resolva o reCAPTCHA antes de enviar o formulario")
-    //   return
-    // }
+    if(!isRecaptchaVerified){
+      alert("Por favor, resolva o reCAPTCHA antes de enviar o formulario")
+      return
+    }
 
   const templateParams = {
     name,
@@ -43,18 +43,18 @@ const handleChangeReCAPTCHA = (value:string | null) => {
     modality
   }
 
-  // setLoading(true)
-  // emailjs.send("service_o5dr4xb", "template_we8knos", templateParams,"VD3d76SjVCfyNLYeO").then((response)=>{
-  //   console.log("Email Enviado",response.status,response.text)
-  //   setLoading(false)
-  //   setName('')
-  //   setEmail(''),
-  //   setPhone(''),
-  //   setConfirmForm(''),
-  //   setModality('')
-  // },(err)=>{
-  //   console.error("Error:", err);
-  // })
+  setLoading(true)
+  emailjs.send("service_o5dr4xb", "template_we8knos", templateParams,"VD3d76SjVCfyNLYeO").then((response)=>{
+    console.log("Email Enviado",response.status,response.text)
+    setLoading(false)
+    setName('')
+    setEmail(''),
+    setPhone(''),
+    setConfirmForm(''),
+    setModality('')
+  },(err)=>{
+    console.error("Error:", err);
+  })
   setShowModal(true)
   // alert(`Olá ${name}, recebemos sua inscrição em breve entraremos em contato, Obrigado!`)
 }
